@@ -5,7 +5,7 @@ using AdvertisementApp.Entities;
 
 namespace AdvertisementApp.Data.UnitOfWork
 {
-    public class Uow
+    public class Uow:IUow
     {
         private readonly AdvertisementContext _context;
 
