@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.Shared", "AdvertisementApp.Shared\AdvertisementApp.Shared.csproj", "{DA78B758-9662-4644-BBE0-8334A553E636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvertisementApp.Shared", "AdvertisementApp.Shared\AdvertisementApp.Shared.csproj", "{DA78B758-9662-4644-BBE0-8334A553E636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.Entities", "AdvertisementApp.Entities\AdvertisementApp.Entities.csproj", "{F2803440-6994-4BE7-B144-274DC20E50F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvertisementApp.Entities", "AdvertisementApp.Entities\AdvertisementApp.Entities.csproj", "{F2803440-6994-4BE7-B144-274DC20E50F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.Data", "AdvertisementApp.Data\AdvertisementApp.Data.csproj", "{F22C07ED-E5EB-4B2A-BFB6-3A82FE8296E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvertisementApp.Data", "AdvertisementApp.Data\AdvertisementApp.Data.csproj", "{F22C07ED-E5EB-4B2A-BFB6-3A82FE8296E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.Business", "AdvertisementApp.Business\AdvertisementApp.Business.csproj", "{8C8641DF-9943-4644-8222-4C6929CACA76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvertisementApp.Business", "AdvertisementApp.Business\AdvertisementApp.Business.csproj", "{8C8641DF-9943-4644-8222-4C6929CACA76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.UI", "AdvertisementApp.UI\AdvertisementApp.UI.csproj", "{0948D440-48D0-4FC1-9762-2F0FC4A1C4D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvertisementApp.UI", "AdvertisementApp.UI\AdvertisementApp.UI.csproj", "{0948D440-48D0-4FC1-9762-2F0FC4A1C4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.Dtos", "AdvertisementApp.Dtos\AdvertisementApp.Dtos.csproj", "{73E16B04-BE04-4B76-9306-51C38E428F0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0948D440-48D0-4FC1-9762-2F0FC4A1C4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0948D440-48D0-4FC1-9762-2F0FC4A1C4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0948D440-48D0-4FC1-9762-2F0FC4A1C4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73E16B04-BE04-4B76-9306-51C38E428F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E16B04-BE04-4B76-9306-51C38E428F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E16B04-BE04-4B76-9306-51C38E428F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E16B04-BE04-4B76-9306-51C38E428F0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
