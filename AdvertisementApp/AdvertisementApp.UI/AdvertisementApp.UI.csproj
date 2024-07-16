@@ -17,4 +17,10 @@
     <ProjectReference Include="..\AdvertisementApp.Business\AdvertisementApp.Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\themes\startbootstrap-one-page-wonder-gh-pages\assets\img\" />
+    <Folder Include="wwwroot\themes\startbootstrap-one-page-wonder-gh-pages\css\" />
+    <Folder Include="wwwroot\themes\startbootstrap-one-page-wonder-gh-pages\js\" />
+  </ItemGroup>
+
 </Project>
