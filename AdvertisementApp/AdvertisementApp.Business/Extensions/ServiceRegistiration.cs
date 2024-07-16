@@ -30,6 +30,7 @@ namespace AdvertisementApp.Business.Extensions
         {
             services.AddScoped<IUow, Uow>();
             services.AddScoped<IProvidedServiceManager, ProvidedServiceManager>();
+            services.AddScoped<IAdvertisementManager, AdvertisementManager>();
         }
     }
 }

@@ -7,10 +7,12 @@ namespace AdvertisementApp.UI.Controllers
     public class HomeController : Controller
     {
         private readonly IProvidedServiceManager _providedServiceManager;
+        private readonly IAdvertisementManager _advertisementManager;
 
-        public HomeController(IProvidedServiceManager providedServiceManager)
+        public HomeController(IProvidedServiceManager providedServiceManager, IAdvertisementManager advertisementManager)
         {
             _providedServiceManager = providedServiceManager;
+            _advertisementManager = advertisementManager;
         }
 
         public async Task<IActionResult> Index()
@@ -19,9 +21,10 @@ namespace AdvertisementApp.UI.Controllers
             return this.ResponseView(response);
         }
 
-        public IActionResult HumanResource()
+        public async Task<IActionResult> HumanResource()
         {
-            return View();
+            var response = await _advertisementManager.GetActivesAsync();
+            return this.ResponseView(response);
         }
 
       
