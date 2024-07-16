@@ -1,32 +1,23 @@
-﻿using AdvertisementApp.UI.Models;
+﻿using AdvertisementApp.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace AdvertisementApp.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IProvidedServiceManager _providedServiceManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProvidedServiceManager providedServiceManager)
         {
-            _logger = logger;
+            _providedServiceManager = providedServiceManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var response= await _providedServiceManager.GetAllAsync();
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+      
     }
 }

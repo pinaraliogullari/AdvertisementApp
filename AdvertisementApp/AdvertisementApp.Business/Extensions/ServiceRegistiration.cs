@@ -1,4 +1,6 @@
 ﻿using AdvertisementApp.Business.FluentValidation;
+using AdvertisementApp.Business.Interfaces;
+using AdvertisementApp.Business.Services;
 using AdvertisementApp.Data.Contexts;
 using AdvertisementApp.Data.UnitOfWork;
 using AdvertisementApp.Dtos.ProvidedServiceDtos;
@@ -25,6 +27,7 @@ namespace AdvertisementApp.Business.Extensions
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IUow, Uow>();
+            services.AddScoped<IProvidedServiceManager, ProvidedServiceManager>();
         }
     }
 }

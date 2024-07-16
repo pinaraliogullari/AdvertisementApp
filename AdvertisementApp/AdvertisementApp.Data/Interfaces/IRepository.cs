@@ -11,9 +11,10 @@ namespace AdvertisementApp.Data.Interfaces
         Task<List<T>> GetAllAsync<TKey>(Expression<Func<T, TKey>> selector, OrderByType orderByType = OrderByType.DESC);
         Task<List<T>> GetAllAsync<TKey>(Expression<Func<T, bool>> predicate, Expression<Func<T, TKey>> selector, OrderByType orderByType = OrderByType.DESC);
         Task<T> FindAsync(object id);
-        Task<T> GetByFilterAsync(Expression<Func<T, bool>> predicate, bool tracking);
+        Task<T> GetByFilterAsync(Expression<Func<T, bool>> predicate, bool tracking=true);
         IQueryable<T> GetQuery();
         Task CreateAsync(T entity);
         void Update(T entity, T unchanged);
+        void Remove(T entity);
     }
 }
