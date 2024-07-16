@@ -25,12 +25,15 @@ namespace AdvertisementApp.Business.Extensions
             services.AddTransient<IValidator<ProvidedServiceUpdateDto>,ProvidedServiceUpdateDtoValidator>();
             services.AddTransient<IValidator<AdvertisementCreateDto>,AdvertisementCreateDtoValidator>();
             services.AddTransient<IValidator<AdvertisementUpdateDto>,AdvertisementUpdateDtoValidator>();
+            services.AddTransient<IValidator<AppUserCreateDto>,AppUserCreateDtoValidator>();
+            services.AddTransient<IValidator<AppUserUpdateDto>,AppUserUpdateDtoValidator>();
         }
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IUow, Uow>();
             services.AddScoped<IProvidedServiceManager, ProvidedServiceManager>();
             services.AddScoped<IAdvertisementManager, AdvertisementManager>();
+            services.AddScoped<IAppUserManager, AppUserManager>();
         }
     }
 }
