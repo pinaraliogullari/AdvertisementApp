@@ -1,4 +1,4 @@
-﻿using AdvertisementApp.Dtos.ProvidedServiceDtos;
+﻿using AdvertisementApp.Dtos;
 using AdvertisementApp.Entities;
 
 namespace AdvertisementApp.Business.Interfaces

@@ -1,6 +1,6 @@
 ﻿using AdvertisementApp.Dtos.Interfaces;
 
-namespace AdvertisementApp.Dtos.ProvidedServiceDtos
+namespace AdvertisementApp.Dtos
 {
     public class ProvidedServiceListDto:IDto
     {

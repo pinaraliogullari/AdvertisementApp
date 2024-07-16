@@ -2,10 +2,11 @@
 
 namespace AdvertisementApp.Dtos
 {
-    public class ProvidedServiceCreateDto:IDto
+    public class AdvertisementCreateDto : IDto
     {
         public string Title { get; set; }
-        public string ImagePath { get; set; }
+        public bool Status { get; set; }
         public string Description { get; set; }
     }
+
 }

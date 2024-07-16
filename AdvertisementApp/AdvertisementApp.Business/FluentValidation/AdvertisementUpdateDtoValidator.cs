@@ -3,12 +3,12 @@ using FluentValidation;
 
 namespace AdvertisementApp.Business.FluentValidation
 {
-    public class ProvidedServiceCreateDtoValidator :AbstractValidator<ProvidedServiceCreateDto>
+    public class AdvertisementUpdateDtoValidator:AbstractValidator<AdvertisementUpdateDto>
     {
-        public ProvidedServiceCreateDtoValidator()
+        public AdvertisementUpdateDtoValidator()
         {
+            RuleFor(x=>x.Id).NotEmpty();
             RuleFor(x=>x.Title).NotEmpty();
-            RuleFor(x=>x.ImagePath).NotEmpty();
             RuleFor(x=>x.Description).NotEmpty();
         }
     }

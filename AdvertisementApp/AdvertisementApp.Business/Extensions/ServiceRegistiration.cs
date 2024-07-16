@@ -3,7 +3,7 @@ using AdvertisementApp.Business.Interfaces;
 using AdvertisementApp.Business.Services;
 using AdvertisementApp.Data.Contexts;
 using AdvertisementApp.Data.UnitOfWork;
-using AdvertisementApp.Dtos.ProvidedServiceDtos;
+using AdvertisementApp.Dtos;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +23,8 @@ namespace AdvertisementApp.Business.Extensions
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddTransient<IValidator<ProvidedServiceCreateDto>,ProvidedServiceCreateDtoValidator>();
             services.AddTransient<IValidator<ProvidedServiceUpdateDto>,ProvidedServiceUpdateDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementCreateDto>,AdvertisementCreateDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementUpdateDto>,AdvertisementUpdateDtoValidator>();
         }
         public static void AddServices(this IServiceCollection services)
         {
