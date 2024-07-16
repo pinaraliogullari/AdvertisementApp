@@ -27,6 +27,8 @@ namespace AdvertisementApp.Business.Extensions
             services.AddTransient<IValidator<AdvertisementUpdateDto>,AdvertisementUpdateDtoValidator>();
             services.AddTransient<IValidator<AppUserCreateDto>,AppUserCreateDtoValidator>();
             services.AddTransient<IValidator<AppUserUpdateDto>,AppUserUpdateDtoValidator>();
+            services.AddTransient<IValidator<GenderCreaterDto>,GenderCreateDtoValidator>();
+            services.AddTransient<IValidator<GenderUpdateDto>,GenderUpdateDtoValidator>();
         }
         public static void AddServices(this IServiceCollection services)
         {
@@ -34,6 +36,7 @@ namespace AdvertisementApp.Business.Extensions
             services.AddScoped<IProvidedServiceManager, ProvidedServiceManager>();
             services.AddScoped<IAdvertisementManager, AdvertisementManager>();
             services.AddScoped<IAppUserManager, AppUserManager>();
+            services.AddScoped<IGenderManager, GenderManager>();
         }
     }
 }
