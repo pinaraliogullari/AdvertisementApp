@@ -1,8 +1,18 @@
 using AdvertisementApp.Business.Extensions;
 using AdvertisementApp.UI.Extensions;
+using Microsoft.AspNetCore.Authentication.Cookies;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+     .AddCookie(options =>
+     {
+         options.Cookie.Name = "AdvertisementCookie";
+         options.Cookie.HttpOnly = true;
+         options.Cookie.SameSite = SameSiteMode.Strict;
+         options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+     });
 builder.Services.AddControllersWithViews();
 builder.Services.AddContext();
 builder.Services.AddServices();
@@ -25,6 +35,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

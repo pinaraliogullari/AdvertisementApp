@@ -1,5 +1,6 @@
 ﻿using AdvertisementApp.Business.Interfaces;
 using AdvertisementApp.Dtos;
+using AdvertisementApp.Shared.Enums;
 using AdvertisementApp.UI.Extensions;
 using AdvertisementApp.UI.Models;
 using AutoMapper;
@@ -52,7 +53,7 @@ namespace AdvertisementApp.UI.Controllers
             if (result.IsValid)
             {
                 var dto= _mapper.Map<AppUserCreateDto>(model);
-                var createdResponse= await _appUserManager.CreateWithRoleAsync(dto,4);
+                var createdResponse= await _appUserManager.CreateWithRoleAsync(dto,(int)RoleType.Member);
                 return this.ResponseRedirectAction(createdResponse, "SignIn");
             }
             foreach (var error in result.Errors)
