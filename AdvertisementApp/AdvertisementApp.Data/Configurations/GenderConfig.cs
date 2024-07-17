@@ -8,7 +8,18 @@ namespace AdvertisementApp.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Gender> builder)
         {
-            builder.Property(x=>x.Definition).HasMaxLength(300).IsRequired();
+            builder.Property(x => x.Definition).HasMaxLength(300).IsRequired();
+            builder.HasData(
+                new Gender
+                {
+                    Id = 1,
+                    Definition = "Kadın"
+                }, new Gender
+                {
+                    Id = 2,
+                    Definition = "Erkek"
+                }
+            );
         }
     }
 }

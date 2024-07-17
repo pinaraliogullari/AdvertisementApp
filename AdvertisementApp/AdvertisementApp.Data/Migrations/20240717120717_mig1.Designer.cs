@@ -4,6 +4,7 @@ using AdvertisementApp.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdvertisementApp.Data.Migrations
 {
     [DbContext(typeof(AdvertisementContext))]
-    partial class AdvertisementContextModelSnapshot : ModelSnapshot
+    [Migration("20240717120717_mig1")]
+    partial class mig1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,12 +138,12 @@ namespace AdvertisementApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 3,
+                            Id = 1,
                             Definition = "Admin"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = 2,
                             Definition = "Member"
                         });
                 });
@@ -228,18 +231,6 @@ namespace AdvertisementApp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Definition = "Kadın"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Definition = "Erkek"
-                        });
                 });
 
             modelBuilder.Entity("AdvertisementApp.Entities.MilitaryStatus", b =>

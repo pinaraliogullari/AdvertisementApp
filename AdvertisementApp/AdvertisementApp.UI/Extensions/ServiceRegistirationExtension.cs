@@ -9,6 +9,7 @@ namespace AdvertisementApp.UI.Extensions
         public static void AddValidationServices(this IServiceCollection services)
         {
             services.AddTransient<IValidator<UserCreateModel>,UserCreateModelValidator>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
     }
 }
