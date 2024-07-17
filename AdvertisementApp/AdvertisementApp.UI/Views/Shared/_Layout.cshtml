@@ -27,8 +27,16 @@
                     @{
                         if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="LogOut">Çıkış Yap Yap</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HumanResource">İnsan Kaynakları</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="LogOut">Çıkış Yap </a></li>
+                            @if (User.IsInRole("Member"))
+                            {
+                                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HumanResource">İnsan Kaynakları</a></li>
+                            }
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item"><a class="nav-link" asp-controller="Advertisement" asp-action="Index">İş İlanları</a></li>
+                            }
+
                         }
                         else
                         {
