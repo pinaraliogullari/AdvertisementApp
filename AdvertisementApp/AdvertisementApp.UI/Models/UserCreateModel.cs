@@ -11,7 +11,7 @@ namespace AdvertisementApp.UI.Models
         public string ConfirmPassword { get; set; }
         public string PhoneNumber { get; set; }
         public int GenderId { get; set; }
-        public SelectList GenderList { get; set; }
-        //public List<SelectListItem> GenderListItems { get; set; }
+        //public SelectList GenderList { get; set; }
+        public List<SelectListItem> GenderListItems { get; set; }
     }
 }

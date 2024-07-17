@@ -1,4 +1,5 @@
 using AdvertisementApp.Business.Extensions;
+using AdvertisementApp.UI.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddContext();
 builder.Services.AddServices();
 builder.Services.AddValidationAndMappingServices();
+builder.Services.AddValidationServices();
 
 
 var app = builder.Build();
