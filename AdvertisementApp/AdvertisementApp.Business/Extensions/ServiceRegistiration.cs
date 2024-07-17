@@ -1,6 +1,7 @@
 ﻿using AdvertisementApp.Business.FluentValidation;
 using AdvertisementApp.Business.Interfaces;
 using AdvertisementApp.Business.Services;
+using AdvertisementApp.Business.ValidationRules;
 using AdvertisementApp.Data.Contexts;
 using AdvertisementApp.Data.UnitOfWork;
 using AdvertisementApp.Dtos;
@@ -27,8 +28,10 @@ namespace AdvertisementApp.Business.Extensions
             services.AddTransient<IValidator<AdvertisementUpdateDto>,AdvertisementUpdateDtoValidator>();
             services.AddTransient<IValidator<AppUserCreateDto>,AppUserCreateDtoValidator>();
             services.AddTransient<IValidator<AppUserUpdateDto>,AppUserUpdateDtoValidator>();
+            services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
             services.AddTransient<IValidator<GenderCreaterDto>,GenderCreateDtoValidator>();
             services.AddTransient<IValidator<GenderUpdateDto>,GenderUpdateDtoValidator>();
+            
         }
         public static void AddServices(this IServiceCollection services)
         {

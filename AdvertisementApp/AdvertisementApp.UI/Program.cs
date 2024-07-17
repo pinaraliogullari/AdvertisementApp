@@ -12,6 +12,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
          options.Cookie.SameSite = SameSiteMode.Strict;
          options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
          options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+         options.LoginPath= "/Account/SignIn";
+         options.LogoutPath= "/Account/LogOut";
+         options.AccessDeniedPath = "/Account/AccessDenied";
      });
 builder.Services.AddControllersWithViews();
 builder.Services.AddContext();
