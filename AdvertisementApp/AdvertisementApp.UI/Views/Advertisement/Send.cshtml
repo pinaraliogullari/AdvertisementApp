@@ -1,8 +1,30 @@
 ﻿@model AdvertisementAppUserCreateModel
 
-<form asp-controller="Advertisement" asp-action="Send" method="post">
+<form class="w-75 mx-auto p-3" asp-controller="Advertisement" asp-action="Send" method="post">
     <input type="text" asp-for="@Model.AdvertisementId" />
     <div class="mb-3">
-       
+        <label>Askerlik Durumu</label>
+        <select onchange="SetInputVisibility()" asp-for="@Model.MilitaryStatusId" asp-items="@ViewBag.MilitaryStatus" class="form-select">
+        </select>
+    </div>
+
+    <div id="dateDiv" class="mb-3" style="visibility:hidden">
+        <label>Tecil Tarihi</label>
+        <input type="date" asp-for="@Model.EndDate" class="form-control" />
     </div>
 </form>
+
+@section Scripts {
+    <script>
+        function SetInputVisibility() {
+            var selectElement = document.getElementById("MilitaryStatusId");
+            var militaryStatusId = selectElement.value;
+            var dateDiv = document.getElementById("dateDiv");
+            if (militaryStatusId == 2) {
+                dateDiv.style.visibility = "visible";
+            } else {
+                dateDiv.style.visibility = "hidden";
+            }
+        }
+    </script>
+}
