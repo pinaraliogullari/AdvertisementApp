@@ -5,6 +5,7 @@ namespace AdvertisementApp.Dtos
 {
     public class AdvertisementAppUserListDto:IDto
     {
+        public int Id { get; set; }
         public int AdvertisementId { get; set; }
         public AdvertisementListDto Advertisement { get; set; }
         public int AppUserId { get; set; }

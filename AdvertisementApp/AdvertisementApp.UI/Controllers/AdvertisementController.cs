@@ -70,10 +70,10 @@ namespace AdvertisementApp.UI.Controllers
 
             dto.AdvertisementId = model.AdvertisementId;
             dto.AppUserId = model.AppUserId;
-            dto.EndDate= model.EndDate;
+            dto.EndDate = model.EndDate;
             dto.AdvertisementAppUserStatusId = model.AdvertisementAppUserStatusId;
             dto.MilitaryStatusId = model.MilitaryStatusId;
-            dto.WorkExperience= model.WorkExperience;
+            dto.WorkExperience = model.WorkExperience;
             var response = await _advertisementAppUserManager.CreateAsync(dto);
             if (response.ResponseType == Shared.ResponseType.ValidationError)
             {
@@ -102,11 +102,17 @@ namespace AdvertisementApp.UI.Controllers
             }
         }
 
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> List()
         {
-           var list= await _advertisementAppUserManager.GetList(AdvertisementAppUserStatusType.Basvurdu);
+            var list = await _advertisementAppUserManager.GetListAsync(AdvertisementAppUserStatusType.Basvurdu);
+            return View(list);
+        }
+
+        [Authorize(Roles ="Admin")]
+        public async IActionResult SetStatus(int advertisementAppUserId,AdvertisementAppUserStatusType type)
+        {
+           await  _advertisementAppUserManager.SetStatusAsync(advertisementAppUserId, type);
             return View();
         }
     }
-}

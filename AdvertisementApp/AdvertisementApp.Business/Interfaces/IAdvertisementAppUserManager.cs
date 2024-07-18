@@ -7,6 +7,7 @@ namespace AdvertisementApp.Business.Interfaces
     public interface IAdvertisementAppUserManager
     {
         Task<IResponse<AdvertisementAppUserCreateDto>> CreateAsync(AdvertisementAppUserCreateDto dto);
-        Task<List<AdvertisementAppUserListDto>> GetList(AdvertisementAppUserStatusType type)
+        Task<List<AdvertisementAppUserListDto>> GetListAsync(AdvertisementAppUserStatusType type);
+        Task SetStatusAsync(int advertisementAppUserId, AdvertisementAppUserStatusType type);
     }
 }
