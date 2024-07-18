@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="~/css/styles.css" rel="stylesheet" />
+    @RenderSection("Styles", false)
 </head>
 <body id="page-top">
     <!-- Navigation-->
@@ -27,14 +28,16 @@
                     @{
                         if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="LogOut">Çıkış Yap </a></li>
+
                             @if (User.IsInRole("Member"))
                             {
                                 <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HumanResource">İnsan Kaynakları</a></li>
                             }
                             @if (User.IsInRole("Admin"))
                             {
-                                <li class="nav-item"><a class="nav-link" asp-controller="Advertisement" asp-action="List">İş İlanları</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Advertisement" asp-action="List">Başvurular</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Application" asp-action="List">İş İlanları</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="LogOut">Çıkış Yap </a></li>
                             }
 
                         }
@@ -61,6 +64,6 @@
     <!-- Core theme JS-->
     <script src="~/js/scripts.js"></script>
 
-    @RenderSection("Scripts",false)
+    @RenderSection("Scripts", false)
 </body>
 </html>
