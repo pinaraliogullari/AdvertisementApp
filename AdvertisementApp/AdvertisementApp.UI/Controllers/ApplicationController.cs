@@ -33,5 +33,22 @@ namespace AdvertisementApp.UI.Controllers
             var response= await _advertisementManager.CreateAsync(dto);
             return this.ResponseRedirectAction(response,"List");
         }
+
+        public async Task<IActionResult> Update(int id)
+        {
+            var response= await _advertisementManager.GetByIdAsync<AdvertisementUpdateDto>(id);
+            return this.ResponseView(response);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(AdvertisementUpdateDto dto)
+        {
+            var response = await _advertisementManager.UpdateAsync(dto);
+            return this.ResponseRedirectAction(response,"List");
+        }
+        public async Task<IActionResult> Remove(int id)
+        {
+            var response = await _advertisementManager.RemoveAsync(id);
+            return this.ResponseRedirectAction(response, "List");
+        }
     }
 }

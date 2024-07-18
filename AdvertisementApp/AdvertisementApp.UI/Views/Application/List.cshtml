@@ -24,8 +24,8 @@
                         <td>@(advertisement.Status ? "Aktif" : "Pasif")</td>
 
                         <td>
-                            <a asp-controller="Application" asp-action="Update">Güncelle</a>
-                            <a asp-controller="Application" asp-action="Remove">Sil</a>
+                            <a asp-controller="Application" asp-action="Update" asp-route-id="@advertisement.Id">Güncelle</a>
+                            <a asp-controller="Application" asp-action="Remove" asp-route-id="@advertisement.Id">Sil</a>
                         </td>
                     </tr>
                 }
