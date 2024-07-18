@@ -31,6 +31,7 @@ namespace AdvertisementApp.Business.Extensions
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
             services.AddTransient<IValidator<GenderCreaterDto>,GenderCreateDtoValidator>();
             services.AddTransient<IValidator<GenderUpdateDto>,GenderUpdateDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementAppUserCreateDto>,AdvertisementAppUserCreateDtoValidator>();
             
         }
         public static void AddServices(this IServiceCollection services)
@@ -40,6 +41,7 @@ namespace AdvertisementApp.Business.Extensions
             services.AddScoped<IAdvertisementManager, AdvertisementManager>();
             services.AddScoped<IAppUserManager, AppUserManager>();
             services.AddScoped<IGenderManager, GenderManager>();
+            services.AddScoped<IAdvertisementAppUserManager,AdvertisementAppUserManager>();
         }
     }
 }
