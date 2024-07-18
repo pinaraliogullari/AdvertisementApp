@@ -109,10 +109,24 @@ namespace AdvertisementApp.UI.Controllers
             return View(list);
         }
 
-        [Authorize(Roles ="Admin")]
-        public async IActionResult SetStatus(int advertisementAppUserId,AdvertisementAppUserStatusType type)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> SetStatus(int advertisementAppUserId, AdvertisementAppUserStatusType type)
         {
-           await  _advertisementAppUserManager.SetStatusAsync(advertisementAppUserId, type);
-            return View();
+            await _advertisementAppUserManager.SetStatusAsync(advertisementAppUserId, type);
+            return RedirectToAction("List");
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ApprovedList()
+        {
+            var list = await _advertisementAppUserManager.GetListAsync(AdvertisementAppUserStatusType.Mulakat);
+            return View(list);
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> RejectedList()
+        {
+            var list = await _advertisementAppUserManager.GetListAsync(AdvertisementAppUserStatusType.Olumsuz);
+            return View(list);
         }
     }
+}

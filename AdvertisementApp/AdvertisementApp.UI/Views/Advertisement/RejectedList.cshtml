@@ -4,7 +4,7 @@
     {
         <div class="text-end my-3 p-1">
             <a asp-controller="Advertisement" asp-action="ApprovedList">Mülakata Çağırılan Başvurular</a> |
-            <a asp-controller="Advertisement" asp-action="RejectedList">Reddedilen Başvurular</a>
+            <a asp-controller="Advertisement" asp-action="List">Yeni Başvurular</a>
         </div>
 
         <table class="table table-sm table-hover table-striped mt-3">
@@ -33,7 +33,6 @@
                         <td>@advertisementAppUser.WorkExperience</td>
                         <td>
                             <a asp-controller="Advertisement" asp-action="SetStatus" asp-route-advertisementAppUserId="@advertisementAppUser.Id" asp-route-type="@((int)AdvertisementAppUserStatusType.Mulakat)">Mülakata Çağır</a>
-                            <a asp-controller="Advertisement" asp-action="SetStatus" asp-route-advertisementAppUserId="@advertisementAppUser.Id" asp-route-type="@((int)AdvertisementAppUserStatusType.Olumsuz)">Reddet</a>
                         </td>
                     </tr>
                 }
@@ -44,7 +43,7 @@
     {
         <div class="text-end my-3 p-1">
             <a asp-controller="Advertisement" asp-action="ApprovedList">Mülakata Çağırılan Başvurular</a> |
-            <a asp-controller="Advertisement" asp-action="RejectedList">Reddedilen Başvurular</a>
+            <a asp-controller="Advertisement" asp-action="List">Yeni Başvurular</a>
         </div>
         <div class="mt-3 text-center-lead">
             Herhangi bir başvuru bulunmamaktadır.
