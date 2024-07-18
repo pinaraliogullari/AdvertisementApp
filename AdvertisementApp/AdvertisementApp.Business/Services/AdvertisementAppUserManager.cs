@@ -4,8 +4,10 @@ using AdvertisementApp.Data.UnitOfWork;
 using AdvertisementApp.Dtos;
 using AdvertisementApp.Entities;
 using AdvertisementApp.Shared;
+using AdvertisementApp.Shared.Enums;
 using AutoMapper;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 
 namespace AdvertisementApp.Business.Services
 {
@@ -39,6 +41,13 @@ namespace AdvertisementApp.Business.Services
                 return new Response<AdvertisementAppUserCreateDto>(dto, errors);
             }
             return new Response<AdvertisementAppUserCreateDto>(dto, result.ConvertToCustomValidationError());
+        }
+
+        public async Task<List<AdvertisementAppUserListDto>> GetList(AdvertisementAppUserStatusType type)
+        {
+            var query = _uow.GetRepository<AdvertisementAppUser>().GetQuery();
+            var list = await query.Include(x => x.Advertisement).Include(x => x.AdvertisementAppUserStatus).Include(x => x.MilitaryStatus).Include(x => x.AppUser).Where(x => x.AdvertisementAppUserStatusId == (int)type).ToListAsync();
+            return _mapper.Map<List<AdvertisementAppUserListDto>>(list);
         }
     }
 }

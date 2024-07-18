@@ -2,12 +2,10 @@
 using AdvertisementApp.Dtos;
 using AdvertisementApp.Dtos.MilitaryStatusDto;
 using AdvertisementApp.Shared.Enums;
-using AdvertisementApp.UI.Extensions;
 using AdvertisementApp.UI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Net;
 using System.Security.Claims;
 
 namespace AdvertisementApp.UI.Controllers
@@ -102,6 +100,13 @@ namespace AdvertisementApp.UI.Controllers
             {
                 return RedirectToAction("HumanResource", "Home");
             }
+        }
+
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> List()
+        {
+           var list= await _advertisementAppUserManager.GetList(AdvertisementAppUserStatusType.Basvurdu);
+            return View();
         }
     }
 }

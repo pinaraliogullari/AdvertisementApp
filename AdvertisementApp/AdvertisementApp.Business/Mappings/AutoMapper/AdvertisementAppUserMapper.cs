@@ -9,6 +9,7 @@ namespace AdvertisementApp.Business.Mappings.AutoMapper
         public AdvertisementAppUserMapper()
         {
             CreateMap<AdvertisementAppUser, AdvertisementAppUserCreateDto>().ReverseMap();
+            CreateMap<AdvertisementAppUser, AdvertisementAppUserListDto>().ReverseMap();
         }
     }
 }
