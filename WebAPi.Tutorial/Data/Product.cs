@@ -7,6 +7,6 @@
         public int Stock { get; set; }
         public decimal Price { get; set; }
         public DateTime CreatedDate { get; set; }
-        public string ImagePath { get; set; }
+        public string? ImagePath { get; set; }
     }
 }

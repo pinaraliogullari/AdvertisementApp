@@ -34,7 +34,6 @@ namespace WebAPi.Tutorial.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImagePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -50,6 +49,32 @@ namespace WebAPi.Tutorial.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2024, 7, 19, 14, 32, 17, 204, DateTimeKind.Local).AddTicks(5753),
+                            Name = "Bilgisayar",
+                            Price = 45000m,
+                            Stock = 30
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2024, 6, 22, 14, 32, 17, 204, DateTimeKind.Local).AddTicks(5773),
+                            Name = "Telefon",
+                            Price = 20000m,
+                            Stock = 500
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2024, 5, 23, 14, 32, 17, 204, DateTimeKind.Local).AddTicks(5774),
+                            Name = "Klavye",
+                            Price = 5000m,
+                            Stock = 1000
+                        });
                 });
 #pragma warning restore 612, 618
         }

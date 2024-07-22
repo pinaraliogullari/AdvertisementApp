@@ -1,14 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPi.Tutorial.Data;
+using WebAPi.Tutorial.Interfaces;
+using WebAPi.Tutorial.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
+
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ProductContext>(options=>
 options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddScoped<IProductRepository,ProductRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
